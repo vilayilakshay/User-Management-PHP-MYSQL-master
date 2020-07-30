@@ -1,4 +1,4 @@
-FROM pull tomsik68/xampp
+FROM tomsik68/xampp
 
 
 COPY . /var/www/html
