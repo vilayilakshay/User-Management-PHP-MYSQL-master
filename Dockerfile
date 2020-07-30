@@ -1,6 +1,6 @@
 FROM php:7.2-fpm
 RUN apt-get update -yqq \
 && apt-get install -y \
-apache 
+nginx 
 
 COPY . /var/www/html
