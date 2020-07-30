@@ -16,7 +16,7 @@ environment {
         stage('Building our image') {
             steps {
                 script {
-                      bat label: '', script: 'docker build . -t demo_application'
+                      bat label: '', script: 'docker build . -t demonew_application'
                       bat label: '', script: 'docker tag demonew_application vilayil/phpnew_application:demonew_application'
                       
                 }
