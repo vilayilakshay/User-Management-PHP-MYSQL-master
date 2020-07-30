@@ -1,6 +1,4 @@
-FROM xampp
-RUN apt-get update -yqq \
-&& apt-get install -y \
+FROM xampp/app:latest
 
 
 COPY . /var/www/html
