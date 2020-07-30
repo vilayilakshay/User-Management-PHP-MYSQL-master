@@ -1,6 +1,6 @@
-FROM php:7.2-fpm
+FROM xampp
 RUN apt-get update -yqq \
 && apt-get install -y \
-nginx 
+
 
 COPY . /var/www/html
