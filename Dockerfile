@@ -1,10 +1,4 @@
-FROM pensiero/apache-php:php5.6
-
-# Mysql packages
-RUN apt update -q && apt install -yqq --force-yes \
-    php5.6-mysql
-
+FROM php:7.4-apache
 COPY . /var/www/html
-
-# Start apache
-CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+EXPOSE 80
