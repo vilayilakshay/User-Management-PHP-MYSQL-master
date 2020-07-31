@@ -13,10 +13,25 @@ environment {
             }
         }
 
-    }
-    post {
-        always {
-            sh "docker-compose up"
+        stage('Building our image') {
+            steps {
+                script {
+                      bat label: '', script: 'docker build . -t demonew_application'
+                      bat label: '', script: 'docker tag demonew_application vilayil/phpnew_application:demonew_application'
+                      
+                }
+            }
         }
-}
+
+        stage('Deploy our image') {
+            steps {
+                script {
+                   docker.withRegistry( '', registryCredential ) {
+                       bat label: '', script: 'docker push  vilayil/phpnew_application:demonew_application'
+                    }
+                }
+            }
+        }
+
+    }
 }
