@@ -19,3 +19,4 @@ environment {
             sh "docker-compose up"
         }
 }
+}
