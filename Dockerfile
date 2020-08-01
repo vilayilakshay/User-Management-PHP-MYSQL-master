@@ -1,9 +1,7 @@
-FROM toasterlint/php-apache-mysql
-
-RUN apt-get install mysql
-
+FROM php:7.4-apache
 COPY . /var/www/html
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+RUN docker-php-ext-install pdo pdo_mysql
 EXPOSE 80
-RUN echo "extension=php_pdo_mysql.dll" >> /usr/local/etc/php/php.ini-development
-RUN echo "extension=php_pdo_mysql.dll" >> /usr/local/etc/php/php.ini-production
+
+
