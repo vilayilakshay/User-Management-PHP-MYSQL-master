@@ -23,15 +23,5 @@ environment {
             }
         }
 
-        stage('Deploy our image') {
-            steps {
-                script {
-                   docker.withRegistry( '', registryCredential ) {
-                       bat label: '', script: 'docker push  vilayil/phpnew_application:demonew_application'
-                    }
-                }
-            }
-        }
-
     }
 }
