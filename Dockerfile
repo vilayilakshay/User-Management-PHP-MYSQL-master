@@ -3,7 +3,7 @@ COPY . /var/www/html
 RUN apt-get -y install mysql-server
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 RUN docker-php-ext-install pdo pdo_mysql
-RUN docker-compose up
+
 EXPOSE 80
 
 
