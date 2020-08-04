@@ -11,14 +11,10 @@ services:
         volumes:
             - ./db_data:/var/lib/mysql
         environment:
-           DB_HOST: 'mysql'
-           DB_USERNAME: 'root'
-           DB_PASSWORD: ''
-           DB_NAME: '2520448_armentum'
+           MYSQL_PASSWORD: ''
+           MYSQL_DATABASE: '2520448_armentum'
         ports:
             - 3306:3306
-
-
 
 
 
